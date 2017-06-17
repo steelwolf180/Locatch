@@ -17,6 +17,7 @@
   			var bbox = new H.geo.Rect(1.2900, 103.7800, 1.2999, 103.7899);
   			map.setViewBounds(bbox);
 		  		}
+<<<<<<< HEAD
 		// var	firstMarker_lat = lat1;
 		// var	firstMarker_lng = lng1;
 		// var	secondMarker_lat = lat2;
@@ -27,6 +28,62 @@
 		// var	forthMarket_lng = lng4;
 		// var	fifthMarker_lat = lat5;
 		// var	fifthMarker_lng = lng5;
+=======
+		function addVenueLayer(map, platform, renderControls) {
+		  // Create a tile layer, which will display venues
+		  var customVenueLayer = platform.getVenueService().createTileLayer({
+		    // Provide a callback that will be called for each newly created space
+		    onSpaceCreated: onSpaceCreated
+		  });
+
+		  // Get TileProvider from Venue Layer
+		  var venueProvider = customVenueLayer.getProvider();
+		  // Add venues layer to the map
+		  map.addLayer(customVenueLayer);
+
+		  // Use the custom function (i.e. not a part of the API)
+		  // to render buttons with corresponding click callbacks
+		  renderControls('Change floor', {
+		    '+1 Level': function () {
+		      // Increase global floor level on the venue provider
+		      venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() + 1);
+		    },
+		    '-1 Level': function () {
+		      // Decrease global floor level on the venue provider
+		      venueProvider.setCurrentLevel(venueProvider.getCurrentLevel() - 1);
+		    }
+		  });
+		}
+
+
+/**
+ * Changes the default style for H&M shops
+ *
+ * @param {H.service.venues.Space}
+ */
+function onSpaceCreated(space) {
+  // getData for spaces contains data from the Venue Interaction Tile API,
+  // see https://developer.here.com/rest-apis/documentation/venue-maps/topics/resource-type-venue-interaction-tile.html
+  if (space.getData().preview === 'H&M') {
+    space.setStyle({
+      fillColor: 'rgba(0,255,0,0.3)'
+    });
+  }
+}
+
+
+/*
+		var	firstMarker_lat = lat1;
+		var	firstMarker_lng = lng1;
+		var	secondMarker_lat = lat2;
+		var	secondMarker_lng = lng2;
+		var	thirdMarker_lat = lat3;
+		var	thirdMarker_lng = lng3;
+		var	forthMarker_lat = lat4;
+		var	forthMarket_lng = lng4;
+		var	fifthMarker_lat = lat5;
+		var	fifthMarker_lng = lng5;
+>>>>>>> c6de2c94afee3adad57afff5a437bb1443fa9b97
 
 		function addMarkersToMap(map) {
 		  var firstMarker = new H.map.Marker({lat:1.299861, lng:103.787705});
@@ -98,6 +155,28 @@
 		  map.addObject(marker);
 		  }
 		};
+			// Template function for displaying controls with a heading and buttons
+			function renderControls(title, buttons) {
+			  var containerNode = document.createElement('div');
+
+			  containerNode.innerHTML = '<h4 class="title">' + title + '</h4><div class="btn-group"></div>';
+			  containerNode.setAttribute('style',
+			      'position:absolute;top:0;left:0;background-color:#fff; padding:10px;text-align:center');
+
+			  Object.keys(buttons).forEach(function (label) {
+			    var input = document.createElement('input');
+			    input.value = label;
+			    input.type = 'button';
+			    input.onclick = buttons[label];
+			    input.className="btn btn-sm btn-default"
+			    containerNode.lastChild.appendChild(input);
+			  });
+
+			  map.getElement().appendChild(containerNode);
+			}
+
+// main logic goes here
+addVenueLayer(map, platform, renderControls);
 
 		// Get an instance of the geocoding service:
 		var geocoder = platform.getGeocodingService();
