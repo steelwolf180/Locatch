@@ -162,8 +162,8 @@ function onSpaceCreated(space) {
 			  map.getElement().appendChild(containerNode);
 			}
 
-// main logic goes here
-addVenueLayer(map, platform, renderControls);
+		// main logic goes here
+		addVenueLayer(map, platform, renderControls);
 
 		// Get an instance of the geocoding service:
 		var geocoder = platform.getGeocodingService();
