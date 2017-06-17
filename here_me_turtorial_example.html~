@@ -62,7 +62,7 @@
 	    maptypes.normal.traffic,
 	    {
 	      zoom: 11.5,
-	      center: { lat: 1.36, lng: 103.81848599999994 }
+	      center: { lat: 1.36, lng: 103.81648599999994 }
 	    });
 
 	    // Create the default UI:
