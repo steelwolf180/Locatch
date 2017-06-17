@@ -1,4 +1,4 @@
-<html>
+	<html>
   <head>
   	  
 	  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -17,34 +17,33 @@
   			var bbox = new H.geo.Rect(1.2900, 103.7800, 1.2999, 103.7899);
   			map.setViewBounds(bbox);
 		  		}
-/*
-		var	firstMarker_lat = lat1;
-		var	firstMarker_lng = lng1;
-		var	secondMarker_lat = lat2;
-		var	secondMarker_lng = lng2;
-		var	thirdMarker_lat = lat3;
-		var	thirdMarker_lng = lng3;
-		var	forthMarker_lat = lat4;
-		var	forthMarket_lng = lng4;
-		var	fifthMarker_lat = lat5;
-		var	fifthMarker_lng = lng5;
+		// var	firstMarker_lat = lat1;
+		// var	firstMarker_lng = lng1;
+		// var	secondMarker_lat = lat2;
+		// var	secondMarker_lng = lng2;
+		// var	thirdMarker_lat = lat3;
+		// var	thirdMarker_lng = lng3;
+		// var	forthMarker_lat = lat4;
+		// var	forthMarket_lng = lng4;
+		// var	fifthMarker_lat = lat5;
+		// var	fifthMarker_lng = lng5;
 
 		function addMarkersToMap(map) {
-		  var firstMarker = new H.map.Marker({lat:firstMarker_lat, firstMarker_lng});
+		  var firstMarker = new H.map.Marker({lat:1.299861, lng:103.787705});
 		  map.addObject(firstMarker);
 
-		  var secondMarker = new H.map.Marker({lat:secondMarker_lat, secondMarker_lng});
+		  var secondMarker = new H.map.Marker({lat:1.299859, lng:103.787340});
 		  map.addObject(secondMarker);
 
-		  var thirdMarker = new H.map.Marker({lat:thirdMarker_lat, thirdMarker_lng});
+		  var thirdMarker = new H.map.Marker({lat:1.300159, lng:103.788161});
 		  map.addObject(thirdMarker);
 
-		  var forthMarker = new H.map.Marker({lat:forthMarker_lat, forthMarker_lng});
+		  var forthMarker = new H.map.Marker({lat:1.299977, lng:103.787745});
 		  map.addObject(forthMarker);
 
-		  var fifthMarker = new H.map.Marker({lat:fifthMarker_lat, fifthMarker_lng});
+		  var fifthMarker = new H.map.Marker({lat:1.299542, lng:103.788252});
 		  map.addObject(fifthMarker);
-		}*/
+		}
 
                 
 	    // Initialize the platform object:
@@ -109,6 +108,9 @@
 		geocoder.geocode(geocodingParams, onResult, function(e) {
 		  alert(e);
 		});
+
+		// Now use the map as required...
+		addMarkersToMap(map);
 
 	</script>
   </body>

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"function"
+			],
+			[
 				"lis",
 				"list_"
 			],
@@ -315,7 +319,17 @@
 			"file": "here_me_turtorial_example.html",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 2941,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "locate_request.html",
+			"settings":
+			{
+				"buffer_size": 594,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -352,6 +366,7 @@
 	},
 	"file_history":
 	[
+		"/C/Projects/angelhack2017/here_me_turtorial_example.html",
 		"/C/Projects/angelhack2017/here_me_turtorial_example.co",
 		"/C/Users/steel/Documents/GitHub/angelhack2017/hereme_tutorial",
 		"/C/Projects/TDD_Goat/superlists/lists/tests.py",
@@ -460,6 +475,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"geocodingParams",
 			"test_displays_all_list_items ",
 			"302",
 			"test_multiple_users_can_start_lists_at_different_urls",
@@ -502,15 +518,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 2941,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1450,
+								1450
 							]
 						],
 						"settings":
@@ -518,10 +534,40 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 499.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "locate_request.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								539,
+								539
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
