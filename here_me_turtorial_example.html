@@ -1,32 +1,36 @@
 <html>
   <head>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-  type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-  type="text/javascript" charset="utf-8"></script>
+  
+	  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+	  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+	  <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+	  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
   </head>
   <body>
-  <div style="width: 640px; height: 480px" id="mapContainer"></div>
-  <script>
-    // Initialize the platform object:
-    var platform = new H.service.Platform({
-    'app_id': 'egvPto0AHimupfkbxiR9',
-    'app_code': 'HMrz9Sg_w_Ms952h9APBYw'
-    });
+  	<div style="width: 640px; height: 480px" id="mapContainer"></div>
+  	<script type="text/javascript" charset="utf-8">
+	    // Initialize the platform object:
+	    var platform = new H.service.Platform({
+	    'app_id': 'egvPto0AHimupfkbxiR9',
+	    'app_code': 'HMrz9Sg_w_Ms952h9APBYw'
+	    });
 
 
-    // Obtain the default map types from the platform object
-    var maptypes = platform.createDefaultLayers();
+	    // Obtain the default map types from the platform object
+	    var maptypes = platform.createDefaultLayers();
 
-    // Instantiate (and display) a map object:
-    var map = new H.Map(
-    document.getElementById('mapContainer'),
-    maptypes.normal.traffic,
-    {
-      zoom: 10,
-      center: { lat: 1.299915, lng: 103.78748619999999 }
-    });
-  </script>
+	    // Instantiate (and display) a map object:
+	    var map = new H.Map(
+	    document.getElementById('mapContainer'),
+	    maptypes.normal.traffic,
+	    {
+	      zoom: 10,
+	      center: { lat: 1.299915, lng: 103.78748619999999 }
+	    });
+
+	    // Create the default UI:
+		var ui = H.ui.UI.createDefault(map, maptypes);
+	</script>
   </body>
 </html>
