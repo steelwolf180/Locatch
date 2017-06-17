@@ -6,6 +6,7 @@
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
 	  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+	  <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
   	<div style="width: 640px; height: 480px" id="mapContainer"></div>
@@ -31,6 +32,18 @@
 
 	    // Create the default UI:
 		var ui = H.ui.UI.createDefault(map, maptypes);
+
+		// Enable the event system on the map instance:
+		var mapEvents = new H.mapevents.MapEvents(map);
+
+		// Add event listeners:
+		map.addEventListener('tap', function(evt) {
+		  // Log 'tap' and 'mouse' events:
+		  console.log(evt.type, evt.currentPointer.type); 
+		});
+
+		// Instantiate the default behavior, providing the mapEvents object: 
+		var behavior = new H.mapevents.Behavior(mapEvents);
 
 
 		// Create the parameters for the geocoding request:
