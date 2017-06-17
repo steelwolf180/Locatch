@@ -1,22 +1,28 @@
 <html>
   <head>
-  
+  	  
 	  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+	  
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
-	  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
 	  <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+
+	  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
   </head>
   <body>
-  	<div style="width: 640px; height: 480px" id="mapContainer"></div>
+  	<div style="width: 75% ; height: 100%" id="mapContainer"></div>
   	<script type="text/javascript" charset="utf-8">
+  		function setMapViewBounds(map){
+  			var bbox = new H.geo.Rect(42.3736, -710.751, 42.3472, -71.0408);
+  			map.setViewBounds(bbox);
+  		}
+
 	    // Initialize the platform object:
 	    var platform = new H.service.Platform({
 	    'app_id': 'egvPto0AHimupfkbxiR9',
 	    'app_code': 'HMrz9Sg_w_Ms952h9APBYw'
 	    });
-
 
 	    // Obtain the default map types from the platform object
 	    var maptypes = platform.createDefaultLayers();
@@ -45,7 +51,6 @@
 		// Instantiate the default behavior, providing the mapEvents object: 
 		var behavior = new H.mapevents.Behavior(mapEvents);
 
-
 		// Create the parameters for the geocoding request:
 		var geocodingParams = {
 		    searchText: '9 Ayer Rajah Avenue Singapore 138647'
@@ -53,9 +58,8 @@
 
 		// Define a callback function to process the geocoding response:
 		var onResult = function(result) {
-		  var locations = result.Response.View[0].Result,
-		    position,
-		    marker;
+		  var locations = result.Response.View[0].Result,position,marker;
+
 		  // Add a marker for each location found
 		  for (i = 0;  i < locations.length; i++) {
 		  position = {
@@ -76,6 +80,7 @@
 		geocoder.geocode(geocodingParams, onResult, function(e) {
 		  alert(e);
 		});
+
 	</script>
   </body>
 </html>
